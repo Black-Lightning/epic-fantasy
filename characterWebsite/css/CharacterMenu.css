@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document The below is specific to the menu with character names*/
+#content{
+	height:400px;
+	width: 250px;
+	overflow:hidden;
+	position:relative;
+	scrolling:no;
+
+}	
+
+
+
+
+#menu {
+	list-style:none;
+	padding:0;
+	margin:0;
+	top:0;
+	position:relative;
+	height:100%;
+	width:150px;
+}
+
+#menu li {
+padding:10px 0;
+text-align:right;
+display:block;
+cursor:hand;
+}
+
+#menu li a {
+background:url() repeat #000;
+color:#ddd;
+font-family:helvetica, arial, verdana;
+font-size:9px;
+font-weight:900;
+display:inline;
+padding:20px 8px 5px 20px;
+text-decoration:none;
+}
+
+#menu li span {
+font-family:georgia, arial;
+font-size:9px;
+color:#464646;
+}
+
+.NavButtons{
+	 margin-left:100px;
+	
+}
+.filler font {
+font-family:georgia, arial;
+font-size:+6;
+visibility: hidden;
+style="color:#000;
+}
+*
+{border: 0;
+margin:0;
+padding:0;
+}
+
+#page{
+	position: relative;
+	visibility: visible;
+	overflow: hidden;
+}
+
+#images {
+	float: left;
+	width: 600px;
+}
+
+#details {
+	color:#000;
+}
+
+.titles {
+	color: #FFF;
+}
+
+#content#menu li {
+	color: #FFF;
+}
+
+label:hover, label:active {
+	color: #ffffff;
+	padding: 20px 20px 5px 20px;
+	position: relative; right: 10px;
+	background:#93C	
+}

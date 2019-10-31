@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html><head>
+<title>Characters</title>
+<!--this group of linked css/javascript is for the sliding red underline for your main nav-->
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'></script>
+    <script src='js/jquery.color-RGBa-patch.js'></script>
+    <script src='js/example.js'></script>
+    <!--the below links to the css that defines the "empty shell" looks and appearance-->
+    <link rel="stylesheet" type="text/css" href="css/CharacterPageStyle.css"  />
+    <!--these scripts (the ones that are linked below all control the character menu-->    
+ 	<script type="text/javascript" src="js/NewCharacterMenu.js"></script>
+  	<script type="text/javascript" src="js/OldMenuBehaviour.js"></script>
+  	<link rel="stylesheet" type="text/css" href="css/CharacterMenu.css"  />
+    <!--Sub menu scripts-->
+    <link rel="stylesheet" type="text/css" href="css/result-light.css">
+    <script type="text/javascript" src="js/jquery-2.js"></script>
+  <!-- Script for scroll -->
+  <script type="text/javascript">//<![CDATA[
+
+    $(window).load(function(){
+      
+var step = 25;
+var scrolling = false;
+
+// Wire up events for the 'scrollUp' link:
+$("#scrollUp").bind("click", function(event) {
+    event.preventDefault();
+    // Animates the scrollTop property by the specified
+    // step.
+    $("#content").animate({
+        scrollTop: "-=" + step + "px"
+    });
+}).bind("mouseover", function(event) {
+	$(".parent").scrolling = false;//my attempt to prevent parents scrolling
+    scrolling = true;
+    scrollContent("up");
+	
+
+}).bind("mouseout", function(event) {
+    scrolling = false;
+});
+
+
+$("#scrollDown").bind("click", function(event) {
+    event.preventDefault();
+    $("#content").animate({
+        scrollTop: "+=" + step + "px"
+    });
+}).bind("mouseover", function(event) {
+	$(".parent").scrolling = false;
+    scrolling = true;
+    scrollContent("down");
+}).bind("mouseout", function(event) {
+    scrolling = false;
+});
+
+function scrollContent(direction) {
+    var amount = (direction === "up" ? "-=3px" : "+=3px");
+    $("#content").animate({
+        scrollTop: amount
+    }, 1, function() {
+        if (scrolling) {
+            scrollContent(direction);
+        }
+    });
+}
+
+    });
+  //]]>	</script>
+    <script type="text/javascript">
+
+    $(function(){
+      
+$(function () {
+    $(".imageMenu").hide();
+    $(".parent").click(function (e) {
+        e.preventDefault();
+        if (!$(e.target).closest("ul").is(".imageMenu")) {
+            $(".imageMenu", this).toggle();
+        }
+    });
+});
+
+    });
+
+  //]]></script>
+
+</head>
+<body>
+<!--this is the header dragon eye banner image nested inside a div called HeaderBanner which the css is defined for-->
+<div id="HeaderBanner"><img src="images/header.jpg" width="100%"/></div>
+
+<!--this is the top navigation: the nav-wrap div is styled to span the entire page width-->
+<div class="nav-wrap">
+<ul class="group" id="example-one">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="author.html">Author</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li class="current_page_item"><a href="characters.html">Characters</a></li>
+   <li><a href="http://www.theamityblade.com/forum/">Forums</a></li>
+    <li><a href="contact.php">Contact</a></li>
+    
+ </ul>
+</div>
+  
+  
+</div>
+<div id="MainContent">
+<div id="LeftContent">
+<div id="wrapper">
+<div align="left"><a class="NavButtons" id="scrollUp" href="#"><img src="images/CharacterUpArrow.gif" width="20%"/></a>
+<div id="content">
+        <ul>
+        <li class="parent"> <a href="">First Series Name</a>
+       <ul id="menu" class='imageMenu'>
+<!--obviously this is the character menu-->
+ <li><font size="+2">Book One</font></li>
+    <li class='CharacterButton'><a href="javascript:;" onClick="change_pic('images/characters/Series1Book1FirstExample.jpg')">First Example</a></li>
+    <li class='CharacterButton'><a href="javascript:;" onClick="change_pic('images/characters/Series1Book1SecondExample.jpg')">Second Example</a></li>
+    <li class='CharacterButton'><a href="javascript:;" onClick="change_pic('images/characters/Series1Book1Third Example.jpg')">Third Example</a></li>
+<li><font size="+2">Book Two</font></li>
+<li class='CharacterButton'><a href="javascript:;" onClick="change_pic('images/characters/Series1Book2FirstExample.jpg')">First Example</a></li>
+    <li class='CharacterButton'><a href="javascript:;" onClick="change_pic('images/characters/Series1Book2SecondExample.jpg')">Second Example</a></li>
+    <li class='CharacterButton'><a href="javascript:;" onClick="change_pic('images/characters/Series1Book2Third Example.jpg')">Third Example</a></li>
+    </ul>
+         </li>
+        <li class="parent"> <a href="">Second Series</a>
+        <ul id="menu" class='imageMenu'>
+<!--obviously this is the character menu-->
+  <li><font size="+2">Book One</font></li>
+    <li class='CharacterButton'><a href="javascript:;" onClick="change_pic('images/characters/Series2Book1FirstExample.jpg')">First Example</a></li>
+    <li class='CharacterButton'><a href="javascript:;" onClick="change_pic('images/characters/Series2Book1SecondExample.jpg')">Second Example</a></li>
+    <li class='CharacterButton'><a href="javascript:;" onClick="change_pic('images/characters/Series2Book1Third Example.jpg')">Third Example</a></li>
+<li><font size="+2">Book Two</font></li>
+<li class='CharacterButton'><a href="javascript:;" onClick="change_pic('images/characters/Series2Book2FirstExample.jpg')">First Example</a></li>
+    <li class='CharacterButton'><a href="javascript:;" onClick="change_pic('images/characters/Series2Book2SecondExample.jpg')">Second Example</a></li>
+    <li class='CharacterButton'><a href="javascript:;" onClick="change_pic('images/characters/Series2Book2Third Example.jpg')">Third Example</a></li>
+    </ul>
+    </li>
+    </ul>
+    </div>
+
+  <a class="NavButtons" id="scrollDown" href="#"><img src="images/CharacterDownArrow.gif" width="20%"/></a>
+  </div>
+  </div>
+  </div>
+  <div id="RightContent">
+<div id="gallery">
+   <img name="_pimg" src="images/characters/empty.gif" >
+  </div>
+</div>
+  </div>
+  
+<!--this script says, when click on the character button to load that character into the gallery div-->
+<script type="text/javascript">
+function change_pic(p) {
+img = new Image();
+img.src = p;
+img.onload = function() {document.images._pimg.src = img.src};
+}
+ </script>
+ <!--This is for character menu behaviour-->
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "s5mgX"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
